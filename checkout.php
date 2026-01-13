@@ -121,11 +121,11 @@ include 'includes/header.php';
 <!-- Breadcrumb -->
 <nav class="breadcrumb">
     <div class="container">
-        <a href="index.php">Home</a>
+        <a href="index.php">🏠 Home</a>
         <span>›</span>
-        <a href="cart.php">Shopping Cart</a>
+        <a href="cart.php">🛒 Shopping Cart</a>
         <span>›</span>
-        <span>Checkout</span>
+        <span>📋 Checkout</span>
     </div>
 </nav>
 
@@ -133,8 +133,8 @@ include 'includes/header.php';
 <section class="checkout-section">
     <div class="container">
         <div class="checkout-header">
-            <h1>Checkout</h1>
-            <p>Complete your order to bring divinity home</p>
+            <h1>✨ Secure Checkout</h1>
+            <p>Complete your divine shopping journey with confidence</p>
         </div>
 
         <?php if ($message = getFlashMessage('error')): ?>
@@ -152,12 +152,13 @@ include 'includes/header.php';
                     <div class="checkout-sections">
                         <!-- Customer Information -->
                         <div class="checkout-section">
-                            <h3>Customer Information</h3>
+                            <h3>👤 Customer Information</h3>
                             <div class="form-grid">
                                 <div class="form-group">
                                     <label for="customer_name">Full Name *</label>
                                     <input type="text" id="customer_name" name="customer_name" 
-                                           value="<?php echo htmlspecialchars($customer_name ?? ''); ?>" required>
+                                           value="<?php echo htmlspecialchars($customer_name ?? ''); ?>" 
+                                           placeholder="Enter your full name" required>
                                     <?php if (isset($errors['customer_name'])): ?>
                                         <span class="error"><?php echo $errors['customer_name']; ?></span>
                                     <?php endif; ?>
@@ -166,7 +167,8 @@ include 'includes/header.php';
                                 <div class="form-group">
                                     <label for="customer_email">Email Address *</label>
                                     <input type="email" id="customer_email" name="customer_email" 
-                                           value="<?php echo htmlspecialchars($customer_email ?? ''); ?>" required>
+                                           value="<?php echo htmlspecialchars($customer_email ?? ''); ?>" 
+                                           placeholder="your@email.com" required>
                                     <?php if (isset($errors['customer_email'])): ?>
                                         <span class="error"><?php echo $errors['customer_email']; ?></span>
                                     <?php endif; ?>
@@ -186,7 +188,7 @@ include 'includes/header.php';
 
                         <!-- Shipping Address -->
                         <div class="checkout-section">
-                            <h3>Shipping Address</h3>
+                            <h3>🚚 Shipping Address</h3>
                             <div class="form-group">
                                 <label for="shipping_address">Complete Address *</label>
                                 <textarea id="shipping_address" name="shipping_address" rows="4" 
@@ -199,7 +201,7 @@ include 'includes/header.php';
 
                         <!-- Billing Address -->
                         <div class="checkout-section">
-                            <h3>Billing Address</h3>
+                            <h3>💳 Billing Address</h3>
                             <div class="form-group">
                                 <label>
                                     <input type="checkbox" id="same_as_shipping" name="same_as_shipping" 
@@ -216,7 +218,7 @@ include 'includes/header.php';
 
                         <!-- Payment Method -->
                         <div class="checkout-section">
-                            <h3>Payment Method</h3>
+                            <h3>💰 Payment Method</h3>
                             <div class="payment-options">
                                 <div class="payment-option">
                                     <label>
@@ -244,7 +246,7 @@ include 'includes/header.php';
 
                         <!-- Order Notes -->
                         <div class="checkout-section">
-                            <h3>Order Notes (Optional)</h3>
+                            <h3>📝 Order Notes (Optional)</h3>
                             <div class="form-group">
                                 <label for="notes">Special instructions for your order</label>
                                 <textarea id="notes" name="notes" rows="3" 
@@ -255,7 +257,7 @@ include 'includes/header.php';
 
                     <div class="checkout-actions">
                         <a href="cart.php" class="btn btn-secondary">← Back to Cart</a>
-                        <button type="submit" class="btn btn-primary btn-large">Place Order</button>
+                        <button type="submit" class="btn btn-primary btn-large">🛍️ Place Order</button>
                     </div>
                 </form>
             </div>
@@ -263,7 +265,7 @@ include 'includes/header.php';
             <!-- Order Summary -->
             <div class="checkout-summary">
                 <div class="summary-card">
-                    <h3>Order Summary</h3>
+                    <h3>📋 Order Summary</h3>
                     
                     <div class="order-items">
                         <?php foreach ($cart_items as $item): ?>
@@ -293,7 +295,7 @@ include 'includes/header.php';
                         <span>Shipping</span>
                         <span>
                             <?php if ($cart_totals['shipping_amount'] == 0): ?>
-                                <span class="free-shipping">FREE</span>
+                                <span class="free-shipping">✅ FREE</span>
                             <?php else: ?>
                                 <?php echo formatPrice($cart_totals['shipping_amount']); ?>
                             <?php endif; ?>
@@ -310,7 +312,7 @@ include 'includes/header.php';
 
                 <!-- Trust Badges -->
                 <div class="trust-badges">
-                    <h4>Why shop with us?</h4>
+                    <h4>🛡️ Why Shop With Us?</h4>
                     <div class="trust-item">
                         <span class="trust-icon">🔒</span>
                         <span>100% Secure Checkout</span>

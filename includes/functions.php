@@ -272,7 +272,35 @@ function sendEmail($to, $subject, $message, $headers = '') {
     
     $headers = $headers ? $headers : $default_headers;
     
-    return mail($to, $subject, $message, $headers);
+    // Try to send email
+    $result = mail($to, $subject, $message, $headers);
+    
+    // Log email attempts for debugging
+    if (!$result) {
+        error_log("Email failed to send. To: $to, Subject: $subject");
+        error_log("Mail server error: " . error_get_last()['message'] ?? 'Unknown error');
+    } else {
+        error_log("Email sent successfully. To: $to, Subject: $subject");
+    }
+    
+    return $result;
+}
+
+/**
+ * Get wishlist count for current user
+ */
+function getWishlistCount() {
+    if (!isLoggedIn()) {
+        return 0;
+    }
+    
+    try {
+        $result = $db->fetch("SELECT COUNT(*) as count FROM wishlist WHERE user_id = ?", [$_SESSION['user_id']]);
+        return $result['count'] ?? 0;
+    } catch (Exception $e) {
+        error_log("Error getting wishlist count: " . $e->getMessage());
+        return 0;
+    }
 }
 
 /**

@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $sql = "INSERT INTO contact_messages (name, email, phone, subject, message) VALUES (?, ?, ?, ?, ?)";
             $db->query($sql, [$name, $email, $phone, $subject, $message]);
             
-            // Send email notification (basic implementation)
+            // Send email notification (with error handling)
             $email_subject = "New Contact Message: $subject";
             $email_message = "
                 <h2>New Contact Message</h2>
@@ -46,9 +46,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <p>" . nl2br($message) . "</p>
             ";
             
-            sendEmail(ADMIN_EMAIL, $email_subject, $email_message);
+            $admin_email_sent = sendEmail(ADMIN_EMAIL, $email_subject, $email_message);
             
-            // Send confirmation email to customer
+            // Send confirmation email to customer (with error handling)
             $confirmation_subject = "Thank you for contacting Divyaghar";
             $confirmation_message = "
                 <h2>Thank you for reaching out!</h2>
@@ -59,13 +59,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <p>Best regards,<br>Team Divyaghar</p>
             ";
             
-            sendEmail($email, $confirmation_subject, $confirmation_message);
+            $customer_email_sent = sendEmail($email, $confirmation_subject, $confirmation_message);
             
-            setFlashMessage('success', 'Thank you for contacting us! We will get back to you soon.');
+            // Set success message (even if emails fail, the message is saved)
+            $success_message = 'Thank you for contacting us! We will get back to you soon.';
+            if (!$admin_email_sent || !$customer_email_sent) {
+                $success_message .= ' (Note: Email notifications may be delayed, but your message has been received.)';
+            }
+            
+            setFlashMessage('success', $success_message);
             redirect('contact.php');
             
         } catch (Exception $e) {
-            $errors['general'] = 'An error occurred while sending your message. Please try again.';
+            error_log("Contact form error: " . $e->getMessage());
+            $errors['general'] = 'An error occurred while sending your message. Please try again or call us directly.';
         }
     }
 }

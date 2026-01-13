@@ -35,9 +35,11 @@ include 'includes/header.php';
 <!-- Breadcrumb -->
 <nav class="breadcrumb">
     <div class="container">
-        <a href="index.php">Home</a>
+        <a href="index.php">🏠 Home</a>
         <span>›</span>
-        <span>Order Confirmation</span>
+        <a href="checkout.php">🛒 Checkout</a>
+        <span>›</span>
+        <span>✅ Order Confirmation</span>
     </div>
 </nav>
 
@@ -46,7 +48,7 @@ include 'includes/header.php';
     <div class="container">
         <div class="confirmation-header">
             <div class="success-icon">✓</div>
-            <h1>Order Placed Successfully!</h1>
+            <h1>🎉 Order Placed Successfully!</h1>
             <p>Thank you for choosing Divyaghar for your spiritual needs</p>
         </div>
 
@@ -54,7 +56,7 @@ include 'includes/header.php';
             <!-- Order Details -->
             <div class="order-details">
                 <div class="detail-card">
-                    <h3>Order Information</h3>
+                    <h3>📋 Order Information</h3>
                     <div class="order-info-grid">
                         <div class="info-item">
                             <span class="label">Order Number:</span>
@@ -80,7 +82,7 @@ include 'includes/header.php';
                 </div>
 
                 <div class="detail-card">
-                    <h3>Customer Information</h3>
+                    <h3>👤 Customer Information</h3>
                     <div class="customer-info">
                         <p><strong>Name:</strong> <?php echo htmlspecialchars($order['customer_name']); ?></p>
                         <p><strong>Email:</strong> <?php echo htmlspecialchars($order['customer_email']); ?></p>
@@ -89,14 +91,14 @@ include 'includes/header.php';
                 </div>
 
                 <div class="detail-card">
-                    <h3>Shipping Address</h3>
+                    <h3>🚚 Shipping Address</h3>
                     <div class="address-info">
                         <p><?php echo nl2br(htmlspecialchars($order['shipping_address'])); ?></p>
                     </div>
                 </div>
 
                 <div class="detail-card">
-                    <h3>Order Items</h3>
+                    <h3>🛍️ Order Items</h3>
                     <div class="order-items-list">
                         <?php foreach ($order_items as $item): ?>
                             <div class="order-item">
@@ -111,7 +113,7 @@ include 'includes/header.php';
                 </div>
 
                 <div class="detail-card">
-                    <h3>Order Summary</h3>
+                    <h3>💰 Order Summary</h3>
                     <div class="order-summary">
                         <div class="summary-row">
                             <span>Subtotal:</span>
@@ -125,7 +127,7 @@ include 'includes/header.php';
                             <span>Shipping:</span>
                             <span>
                                 <?php if ($order['shipping_amount'] == 0): ?>
-                                    <span class="free-shipping">FREE</span>
+                                    <span class="free-shipping">✅ FREE</span>
                                 <?php else: ?>
                                     <?php echo formatPrice($order['shipping_amount']); ?>
                                 <?php endif; ?>
@@ -142,7 +144,7 @@ include 'includes/header.php';
             <!-- Next Steps -->
             <div class="next-steps">
                 <div class="steps-card">
-                    <h3>What's Next?</h3>
+                    <h3>🔄 What's Next?</h3>
                     <div class="steps-list">
                         <div class="step-item">
                             <div class="step-icon">📧</div>
@@ -179,7 +181,7 @@ include 'includes/header.php';
                 </div>
 
                 <div class="actions-card">
-                    <h3>Continue Shopping</h3>
+                    <h3>🛍️ Continue Shopping</h3>
                     <p>Explore more spiritual items for your home</p>
                     <div class="action-buttons">
                         <a href="products.php" class="btn btn-primary">Browse Products</a>
@@ -188,7 +190,7 @@ include 'includes/header.php';
                 </div>
 
                 <div class="contact-card">
-                    <h3>Need Help?</h3>
+                    <h3>💬 Need Help?</h3>
                     <p>Our customer support team is here to assist you</p>
                     <div class="contact-info">
                         <p>📧 <a href="mailto:info@divyaghar.com">info@divyaghar.com</a></p>
@@ -202,7 +204,7 @@ include 'includes/header.php';
         <!-- Important Information -->
         <div class="important-info">
             <div class="info-card">
-                <h3>Important Information</h3>
+                <h3>ℹ️ Important Information</h3>
                 <ul>
                     <li>Please keep your order number (<strong><?php echo $order['order_number']; ?></strong>) for future reference</li>
                     <li>For Cash on Delivery orders, please keep the exact amount ready</li>
@@ -219,7 +221,7 @@ include 'includes/header.php';
 <section class="thank-you-section">
     <div class="container">
         <div class="thank-you-content">
-            <h2>Thank You for Choosing Divyaghar!</h2>
+            <h2>🙏 Thank You for Choosing Divyaghar!</h2>
             <p>We appreciate your trust in our products. May these spiritual items bring peace and positivity to your home.</p>
             <div class="blessing-message">
                 <p>"ॐ सर्वे भवन्तु सुखिनः" - May all be happy and prosperous</p>
