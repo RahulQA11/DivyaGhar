@@ -1,0 +1,43 @@
+# Sensitive configuration files
+config/database.php
+
+# Uploads directory (user-generated content)
+uploads/*
+!uploads/.gitkeep
+!uploads/products/.gitkeep
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Log files
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Environment files
+.env
+.env.local
+
+# PHP specific
+vendor/
+composer.lock
+
+# Backup files
+*.bak
+*.backup
+*_backup.php
+*_old.php
+
+# Test files (optional - uncomment if you want to exclude test files)
+# *test*.php
+# *debug*.php
+
