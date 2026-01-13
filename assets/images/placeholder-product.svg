@@ -1,0 +1,7 @@
+<!-- Product Placeholder Image -->
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="300" fill="#F5E6D3"/>
+  <rect x="50" y="50" width="200" height="200" fill="#D2B48C" opacity="0.5"/>
+  <circle cx="150" cy="150" r="60" fill="#800000" opacity="0.3"/>
+  <text x="150" y="160" text-anchor="middle" font-family="serif" font-size="18" fill="#800000">Product</text>
+</svg>

@@ -1,0 +1,7 @@
+<!-- Category Placeholder Image -->
+<svg width="400" height="250" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="250" fill="#D2B48C"/>
+  <rect x="75" y="50" width="250" height="150" fill="#800000" opacity="0.4"/>
+  <circle cx="200" cy="125" r="50" fill="#CFB53B" opacity="0.6"/>
+  <text x="200" y="135" text-anchor="middle" font-family="serif" font-size="20" fill="#800000">Category</text>
+</svg>

@@ -1,0 +1,22 @@
+<svg width="180" height="60" viewBox="0 0 180 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#B8860B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B4513;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="30" cy="30" r="25" fill="url(#logoGradient)" />
+  
+  <!-- OM symbol -->
+  <path d="M30 15 Q25 20 25 25 Q25 30 30 30 Q35 30 35 25 Q35 20 30 15 M25 25 Q20 25 20 30 Q20 35 25 35 M35 25 Q40 25 40 30 Q40 35 35 35" 
+        stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Text -->
+  <text x="65" y="25" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="url(#logoGradient)">Divya</text>
+  <text x="65" y="42" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="url(#logoGradient)">Ghar</text>
+  
+  <!-- Tagline -->
+  <text x="65" y="52" font-family="Arial, sans-serif" font-size="8" fill="#8B4513" opacity="0.8">Divine Living</text>
+</svg>
